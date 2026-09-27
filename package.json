@@ -1,0 +1,20 @@
+{
+  "name": "resume-azure-web-app",
+  "version": "1.0.0",
+  "description": "Resume portfolio web app configured for Azure Web App with automatic Cloudflare TryCloudflare tunnel",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node -e \"console.log('Build OK')\""
+  },
+  "keywords": ["azure-web-app", "portfolio", "cloudflare-tunnel"],
+  "author": "Gourav K",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "cloudflared": "^0.7.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gourav K | Resume Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --primary: #2563eb;
+      --secondary: #0f172a;
+      --accent: #38bdf8;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #334155;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --gradient: linear-gradient(135deg, #2563eb, #0ea5e9);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      min-height: 100vh;
+      background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.9)),
+        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: white;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .menu-btn {
+      display: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      max-width: 850px;
+      padding-top: 70px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 50px;
+      background: rgba(56, 189, 248, 0.15);
+      color: #7dd3fc;
+      border: 1px solid rgba(125, 211, 252, 0.3);
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 7vw, 5rem);
+      line-height: 1.1;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero h2 {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: #cbd5e1;
+      font-weight: 500;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      max-width: 740px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 13px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 2px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: white;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.45);
+    }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, 0.35);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+    }
+
+    .contact-row span,
+    .contact-row a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+    }
+
+    .contact-row a:hover {
+      color: var(--accent);
+    }
+
+    /* Sections */
+    section {
+      padding: 85px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title span {
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.85rem;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      color: var(--secondary);
+      margin-top: 8px;
+      font-weight: 800;
+    }
+
+    .section-title p {
+      max-width: 650px;
+      margin: 12px auto 0;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(15, 23, 42, 0.08);
+      border: 1px solid var(--border);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 55px rgba(15, 23, 42, 0.12);
+    }
+
+    .about-card h3 {
+      color: var(--secondary);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .about-card p {
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .quick-info {
+      display: grid;
+      gap: 15px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .info-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #dbeafe;
+      color: var(--primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    .info-item strong {
+      color: var(--secondary);
+      display: block;
+      font-size: 0.98rem;
+    }
+
+    .info-item span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    /* Skills */
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .skill-category h3 {
+      color: var(--secondary);
+      margin-bottom: 18px;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tags span {
+      background: #eff6ff;
+      color: #1d4ed8;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid #bfdbfe;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background: #bfdbfe;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 60px;
+      margin-bottom: 30px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 8px;
+      top: 8px;
+      width: 26px;
+      height: 26px;
+      background: var(--gradient);
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 0 0 4px #dbeafe;
+    }
+
+    .timeline-card h3 {
+      color: var(--secondary);
+      font-size: 1.25rem;
+      margin-bottom: 5px;
+    }
+
+    .timeline-card .role {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .timeline-card ul {
+      list-style: disc;
+      padding-left: 20px;
+      color: var(--text);
+    }
+
+    .timeline-card li {
+      margin-bottom: 8px;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 16px;
+      background: var(--gradient);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+
+    .project-card h3 {
+      color: var(--secondary);
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .tech-stack span {
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+
+    .project-link {
+      color: var(--primary);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 5px;
+    }
+
+    .project-link:hover {
+      color: #1e40af;
+    }
+
+    /* Education & Certificates */
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .education-card h3,
+    .certificate-card h3 {
+      color: var(--secondary);
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+
+    .education-card p,
+    .certificate-card li {
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .certificate-card ul {
+      list-style: none;
+    }
+
+    .certificate-card li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .certificate-card li:last-child {
+      border-bottom: none;
+    }
+
+    .certificate-card i {
+      color: var(--primary);
+      margin-top: 5px;
+    }
+
+    /* Hackathon */
+    .hackathon-box {
+      background: var(--gradient);
+      color: white;
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(37, 99, 235, 0.25);
+    }
+
+    .hackathon-box h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .hackathon-box p {
+      color: #e0f2fe;
+      margin-bottom: 15px;
+    }
+
+    .hackathon-box .btn {
+      background: white;
+      color: var(--primary);
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--secondary);
+      color: white;
+      padding: 45px 0 25px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .footer-logo span {
+      color: var(--accent);
+    }
+
+    footer p {
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .social-links a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 45px;
+      height: 45px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(37,99,235,0.4);
+      z-index: 999;
+      transition: 0.3s;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      background: #1d4ed8;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .about-grid,
+      .skills-wrapper,
+      .projects-grid,
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.98);
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 15px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      header {
+        min-height: auto;
+        padding: 140px 0 90px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 65px 0;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .contact-row {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .hackathon-box {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      #Gourav<span>K</span></a>
+
+      <div class="menu-btn" id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        #aboutAbout</a>
+        #skillsSkills</a>
+        #experienceExperience</a>
+        #projectsProjects</a>
+        #educationEducation</a>
+        #certificatesCertificates</a>
+        #hackathonsHackathons</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header>
+    <div class="container">
+      <div class="hero">
+        <div class="hero-badge">
+          <i class="fa-solid fa-code"></i> Software Developer | Cloud | AI | Cybersecurity
+        </div>
+
+        <h1>Hi, I'm <span>Gourav K</span></h1>
+
+        <h2>Computer Science Engineer passionate about building smart, secure, and scalable digital solutions.</h2>
+
+        <p>
+          I am proficient in Java and Python with hands-on experience in web development,
+          Microsoft Azure, AI services, IoT, cybersecurity, and full-stack development.
+          I enjoy transforming ideas into practical technology solutions that solve real-world problems.
+        </p>
+
+        <div class="hero-buttons">
+          #projects
+            <i class="fa-solid fa-folder-open"></i> View Projects
+          </a>
+          <a href="mailto:ABC@gmail.com" class="btn btn-outline">
+            <i class="fa-solid fa-envelope"></i> Contact Me
+          </a>
+        </div>
+
+        <div class="contact-row">
+          <span><i class="fa-solid fa-phone"></i> +91 0123456789</span>
+          <a href="mailto:ABC@gmail.com"><i class="fa-solid fa-envelope"></i> ABC@gmail.com</a>
+          <a href="https://linkedin.com/in/XYZ" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <span>About Me</span>
+        <h2>Professional Summary</h2>
+        <p>A focused and enthusiastic developer with practical exposure to software engineering, cloud platforms, AI, and cybersecurity.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="card about-card">
+          <h3>Who I Am</h3>
+          <p>
+            I am a Computer Science Engineering student with a strong interest in
+            full-stack development, artificial intelligence, cloud computing, and cybersecurity.
+            I have worked on projects involving speech-to-text transcription, penetration testing tools,
+            Azure AI services, and web-based applications.
+          </p>
+          <p>
+            Through internships and learning programs with Microsoft FRT, IBM SkillsBuild,
+            and EY GDS, I gained practical experience in software development, project collaboration,
+            cloud solutions, and problem-solving in professional environments.
+          </p>
+          <p>
+            My goal is to contribute to innovative technology teams where I can build reliable,
+            efficient, and user-focused software products while continuously improving my technical skills.
+          </p>
+        </div>
+
+        <div class="card quick-info">
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-user-graduate"></i></div>
+            <div>
+              <strong>Degree</strong>
+              <span>B.Tech in Computer Science Engineering</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <strong>Location</strong>
+              <span>India</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <div>
+              <strong>Core Interest</strong>
+              <span>Web Development, AI, Cloud, Cybersecurity</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div>
+              <strong>Experience</strong>
+              <span>Internships, Student Ambassador Program, Hackathons</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-title">
+        <span>Skills & Tools</span>
+        <h2>Technical Expertise</h2>
+        <p>Technologies and tools I use for building software, cloud-based solutions, and AI-driven applications.</p>
+      </div>
+
+      <div class="skills-wrapper">
+        <div class="card skill-category">
+          <h3><i class="fa-solid fa-code"></i> Programming</h3>
+          <div class="skill-tags">
+            <span>Java</span>
+            <span>Python</span>
+            <span>JavaScript</span>
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>SQL</span>
+          </div>
+        </div>
+
+        <div class="card skill-category">
+          <h3><i class="fa-solid fa-cloud"></i> Cloud & AI</h3>
+          <div class="skill-tags">
+            <span>Microsoft Azure</span>
+            <span>Azure AI Services</span>
+            <span>Azure Custom Vision</span>
+            <span>Power BI</span>
+            <span>AI / ML</span>
+            <span>Whisper AI</span>
+          </div>
+        </div>
+
+        <div class="card skill-category">
+          <h3><i class="fa-solid fa-shield-halved"></i> Cybersecurity</h3>
+          <div class="skill-tags">
+            <span>Kali Linux</span>
+            <span>Ethical Hacking</span>
+            <span>P4wnP1 OS</span>
+            <span>Penetration Testing</span>
+            <span>IoT Security</span>
+            <span>Raspberry Pi</span>
+          </div>
+        </div>
+
+        <div class="card skill-category">
+          <h3><i class="fa-solid fa-database"></i> Database</h3>
+          <div class="skill-tags">
+            <span>MySQL</span>
+            <span>Database Design</span>
+            <span>CRUD Operations</span>
+            <span>Data Handling</span>
+          </div>
+        </div>
+
+        <div class="card skill-category">
+          <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools</h3>
+          <div class="skill-tags">
+            <span>VS Code</span>
+            <span>GitHub</span>
+            <span>Google Colab</span>
+            <span>Microsoft Learn</span>
+            <span>Linux</span>
+          </div>
+        </div>
+
+        <div class="card skill-category">
+          <h3><i class="fa-solid fa-users"></i> Soft Skills</h3>
+          <div class="skill-tags">
+            <span>Teamwork</span>
+            <span>Communication</span>
+            <span>Leadership</span>
+            <span>Problem Solving</span>
+            <span>Event Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-title">
+        <span>Experience</span>
+        <h2>Work & Leadership Experience</h2>
+        <p>Internship and community leadership experience in software development, cloud, and technical engagement.</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card timeline-card">
+            <h3>Microsoft Learn Student Ambassador</h3>
+            <div class="role">Beta Ambassador</div>
+            <ul>
+              <li>Represented Microsoft initiatives by encouraging student engagement in cloud, AI, and developer technologies.</li>
+              <li>Organized and supported technical events, workshops, and learning sessions for students and developer communities.</li>
+              <li>Created awareness about Microsoft Learn, Azure services, and career-focused learning resources.</li>
+              <li>Built communication, leadership, and community management skills through ambassador activities.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card timeline-card">
+            <h3>Ernst & Young Global Delivery Services</h3>
+            <div class="role">Full Stack Intern</div>
+            <ul>
+              <li>Worked on front-end and back-end development tasks in a collaborative project environment.</li>
+              <li>Assisted in designing user interfaces and implementing database-related functionality.</li>
+              <li>Collaborated with team members to test features, resolve issues, and improve application performance.</li>
+              <li>Gained professional exposure to software development workflows and project delivery practices.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card timeline-card">
+            <h3>Microsoft Future Ready Talent</h3>
+            <div class="role">Cloud & Technology Intern</div>
+            <ul>
+              <li>Built practical cloud-based solutions using Microsoft Azure and related services.</li>
+              <li>Explored Azure AI services for developing intelligent applications.</li>
+              <li>Improved understanding of cloud deployment, scalability, and solution architecture.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card timeline-card">
+            <h3>IBM SkillsBuild</h3>
+            <div class="role">Technology Learning Program</div>
+            <ul>
+              <li>Completed practical learning modules focused on emerging technologies and professional skills.</li>
+              <li>Developed understanding of AI, cloud fundamentals, and digital transformation concepts.</li>
+              <li>Enhanced problem-solving and project-based learning abilities.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-title">
+        <span>Projects</span>
+        <h2>Featured Projects</h2>
+        <p>Selected projects demonstrating my skills in cybersecurity, AI, web development, and cloud technologies.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="card project-card">
+          <div class="project-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>USB Pi Cybersecurity & Penetration Testing Tool</h3>
+          <p>
+            Designed a compact cybersecurity testing tool using Raspberry Pi Zero W and P4wnP1 OS
+            for educational and authorized security testing environments.
+          </p>
+          <div class="tech-stack">
+            <span>Raspberry Pi Zero W</span>
+            <span>P4wnP1</span>
+            <span>Kali Linux</span>
+            <span>HID Scripting</span>
+          </div>
+          <a href="https://github.com" target="_blank" class="project-link">
+            View Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="card project-card">
+          <div class="project-icon">
+            <i class="fa-solid fa-microphone-lines"></i>
+          </div>
+          <h3>Speech-to-Text Translation & Transcription AI</h3>
+          <p>
+            Developed an AI-based transcription solution capable of converting speech into text
+            and supporting multilingual transcription use cases.
+          </p>
+          <div class="tech-stack">
+            <span>Python</span>
+            <span>Google Colab</span>
+            <span>Whisper AI</span>
+            <span>Machine Learning</span>
+          </div>
+          <a href="https://github.com" target="_blank" class="project-link">
+            View Project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="card project-card">
+          <div class="project-icon">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <h3>Azure Custom Vision AI Model</h3>
+          <p>
+            Built an image classification solution using Azure Custom Vision to understand
+            AI model training, testing, and deployment workflows.
+          </p>
+          <div class="tech-stack">
+            <span>Azure Custom Vision</span>
+            <span>Azure AI</span>
+            <span>Computer Vision</span>
+            <span>Cloud</span>
+          </div>
+          <a href="https://learn.microsoft.com/" target="_blank" class="project-link">
+            Learn More <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <div class="card project-card">
+          <div class="project-icon">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <h3>Professional Resume Portfolio Website</h3>
+          <p>
+            Created a responsive personal portfolio website to showcase technical skills,
+            projects, experience, certifications, and achievements.
+          </p>
+          <div class="tech-stack">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Responsive Design</span>
+          </div>
+          #
+            Current Website <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Certificates -->
+  <section id="education">
+    <div class="container">
+      <div class="section-title">
+        <span>Education</span>
+        <h2>Academic Background</h2>
+        <p>My academic foundation in computer science and technical learning.</p>
+      </div>
+
+      <div class="two-column">
+        <div class="card education-card">
+          <h3><i class="fa-solid fa-graduation-cap"></i> Sagar Institute of Research and Technology, Bhopal</h3>
+          <p><strong>Degree:</strong> B.Tech in Computer Science Engineering</p>
+          <p><strong>CGPA:</strong> 7.43</p>
+          <p>
+            Focused on software development, programming fundamentals, database systems,
+            cloud computing, AI concepts, and cybersecurity-related technologies.
+          </p>
+        </div>
+
+        <div class="card education-card">
+          <h3><i class="fa-solid fa-book-open"></i> Learning Focus</h3>
+          <p><strong>Core Subjects:</strong> Data Structures, DBMS, Operating Systems, Computer Networks, Software Engineering</p>
+          <p><strong>Technical Areas:</strong> Web Development, Artificial Intelligence, Cybersecurity, Cloud Computing</p>
+          <p>
+            Continuously improving skills through online certifications, hackathons,
+            hands-on projects, and practical experimentation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates -->
+  <section id="certificates">
+    <div class="container">
+      <div class="section-title">
+        <span>Certificates</span>
+        <h2>Certifications & Achievements</h2>
+        <p>Certifications that reflect my interest in cloud, AI, and professional technology learning.</p>
+      </div>
+
+      <div class="two-column">
+        <div class="card certificate-card">
+          <h3>Certifications</h3>
+          <ul>
+            <li>
+              <i class="fa-solid fa-certificate"></i>
+              <span>Microsoft Certified: Azure AI Fundamentals — AI-900</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-certificate"></i>
+              <span>Microsoft Learn Student Ambassador Program Participation</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-certificate"></i>
+              <span>IBM SkillsBuild Technology Learning Modules</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-certificate"></i>
+              <span>Microsoft Future Ready Talent Internship Completion</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card certificate-card">
+          <h3>Professional Highlights</h3>
+          <ul>
+            <li>
+              <i class="fa-solid fa-star"></i>
+              <span>Hands-on experience with Azure AI services and cloud-based solutions.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-star"></i>
+              <span>Built AI transcription and cybersecurity-related academic projects.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-star"></i>
+              <span>Participated in hackathons and collaborative innovation challenges.</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-star"></i>
+              <span>Strong interest in building practical, scalable, and secure applications.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hackathons -->
+  <section id="hackathons">
+    <div class="container">
+      <div class="section-title">
+        <span>Hackathons</span>
+        <h2>Innovation & Competition</h2>
+        <p>Hackathon participation focused on building useful technology solutions under real-world problem statements.</p>
+      </div>
+
+      <div class="hackathon-box">
+        <h3><i class="fa-solid fa-trophy"></i> DARPG Hackathon 2024</h3>
+        <p>
+          Spearheaded the development of <strong>Zero Transcriber</strong>, a transcription and translation-based
+          project for DARPG Hackathon 2024, an initiative by the Government of India.
+        </p>
+        <p>
+          The project aimed to convert Hindi, English, and Hinglish audio into accurate text
+          with timestamps, improving accessibility and productivity for audio-based records.
+        </p>
+        <a href="https://github.com/" target="_blank" class="btn">
+          <i class="fa-brands fa-github"></i> View Hackathon Project
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">Gourav<span>K</span></div>
+      <p>Software Developer | AI Enthusiast | Cloud Learner | Cybersecurity Explorer</p>
+
+      <div class="social-links">
+        <a href="https://linkedin.com/in/XYZ" target="_blank" title="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com" target="_blank" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:ABC@gmail.com" title="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+
+      <div class="copyright">
+        © 2026 Gourav K. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fa-solid fa-arrow-up"></i>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const backToTop = document.getElementById("backToTop");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+
+      const icon = menuBtn.querySelector("i");
+      if (navLinks.classList.contains("active")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+      } else {
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+      }
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        const icon = menuBtn.querySelector("i");
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 450) {
+        backToTop.style.display = "flex";
+      } else {
+        backToTop.style.display = "none";
+      }
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+
+</body>
+</html>
